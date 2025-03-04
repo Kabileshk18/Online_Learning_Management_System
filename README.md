@@ -1,10 +1,10 @@
 # Online_Learning_Management_System
 
-##📌 Project Overview
+📌 Project Overview
 
 The Online Learning Management System (LMS) is a backend application built using Node.js, Express, and MySQL. It includes authentication, authorization, user role management, task scheduling, email notifications, and various backend optimizations.
 
-##🚀 Features & Functionalities
+🚀 Features & Functionalities
 
 ◻️User Authentication & Authorization
 
@@ -85,7 +85,7 @@ The Online Learning Management System (LMS) is a backend application built using
     ├── README.md                       # Project Documentation
     └── responseHandler.js              # Application related functions
 
-##🛠️ Installation & Setup
+🛠️ Installation & Setup
 
 1️⃣ Clone the Repository
 
@@ -117,23 +117,23 @@ For development with nodemon:
 
     nodemon start
 
-##🛡️ Security & Validation
+🛡️ Security & Validation
 
     ◾Passport.js & JWT for secure authentication
     ◾Joi Validator for request body validation
     ◾Rate Limiting Middleware to prevent excessive API requests
     ◾Environment Variables for sensitive data management
 
-##📧 Scheduled Email Notification
+📧 Scheduled Email Notification
 
 The system sends an email every Saturday at 5 PM to all students enrolled in courses.
 
-##📜 Logging
+📜 Logging
 
     ◾Winston Logger logs errors and important events to logs/error.log.
     ◾Errors are also handled via the global error middleware.
 
-##🛠️ Technologies Used
+🛠️ Technologies Used
 
     ◾Backend: Node.js, Express.js
     ◾Database: MySQL with Sequelize ORM
@@ -143,6 +143,6 @@ The system sends an email every Saturday at 5 PM to all students enrolled in cou
     ◾Scheduler: Node-Cron
     ◾Email Service: Nodemailer
 
-##👨‍💻 Author
+👨‍💻 Author
 
 Developed by Kabilesh K | GitHub: @Kabileshk18
