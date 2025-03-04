@@ -13,7 +13,6 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
  */
 module.exports = (passport) => {
     var opts = {};
-    console.log('test');
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
     opts.secretOrKey = CONFIG.jwt_encryption;
 
