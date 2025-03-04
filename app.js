@@ -33,9 +33,9 @@ if (CONFIG.app === 'local') {
   models.sequelize.sync();
 }
 app.use(function (req, res, next) {
-  if (req && req.headers && req.headers.authorization) {
-    req.headers.authorization = cryptoService.decrypt(req.headers.authorization);
-  }
+  // if (req && req.headers && req.headers.authorization) {
+  //   req.headers.authorization = cryptoService.decrypt(req.headers.authorization);
+  // }
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', '*');
   // Request methods you wish to allow
