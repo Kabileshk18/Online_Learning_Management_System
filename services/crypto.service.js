@@ -5,15 +5,10 @@ const CryptoJS = require('crypto-js');
  * Modified On: 27.02.2025
  * Reviewed By: -
  * Description: Method which is used to encrypt the generated token.
- * @param req To define the HTTPS request.
- * @param res To define the HTTPS response.
- * @returns If error occurs then return error response.
- * Otherwise return the success response.
  */
 const encrypt = async (plaintext) => {
     let chiperText;
     chiperText = CryptoJS.AES.encrypt(plaintext.toString(), CONFIG.secretkey).toString();
-    console.log(chiperText);
     return chiperText;
 }
 module.exports.encrypt = encrypt;
@@ -23,10 +18,6 @@ module.exports.encrypt = encrypt;
  * Modified On: 27.02.2025
  * Reviewed By: -
  * Description: Method which is used to decrypt the retrieved token.
- * @param req To define the HTTPS request.
- * @param res To define the HTTPS response.
- * @returns If error occurs then return error response.
- * Otherwise return the success response.
  */
 const decrypt = function (chiperText) {
     let plainText;
