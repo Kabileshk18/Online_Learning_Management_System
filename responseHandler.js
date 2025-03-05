@@ -44,7 +44,7 @@ const ReE = async function (req, res, data, code) {
       message: data.message ? data.message : data.error.message ? data.error.message : null
     }
   };
-  logger.error(data);
+  logger.error(response.error.message);
   return res.json(response);
 }
 /**
