@@ -89,11 +89,11 @@ The Online Learning Management System (LMS) is a backend application built using
 
 1️⃣ Clone the Repository
 
-git clone https://github.com/Kabileshk18/Online_Learning_Management_System.git
+    git clone https://github.com/Kabileshk18/Online_Learning_Management_System.git
 
 2️⃣ Install Dependencies
 
-npm install 
+    npm install 
 
 3️⃣ Configure Environment Variables
 
