@@ -34,7 +34,7 @@ The Online Learning Management System (LMS) is a backend application built using
 
     ◾Password hashing with bcrypt
     ◾Input validation to prevent malicious payloads
-
+```bash
 ##📂 Project Structure
     Online_Learning_Management_System/
     ├── bin/
@@ -84,7 +84,7 @@ The Online Learning Management System (LMS) is a backend application built using
     ├── package.json                    # Dependencies
     ├── README.md                       # Project Documentation
     └── responseHandler.js              # Application related functions
-
+```
 🛠️ Installation & Setup
 
 1️⃣ Clone the Repository
