@@ -70,6 +70,7 @@ module.exports = (sequelize, DataTypes) => {
         let err, encryptedToken;
         const token = "Bearer "+jwt.sign({
             id:user.dataValues.id,
+            firstName : user.dataValues.firstName,
             email:user.dataValues.email,
             role:user.dataValues.role
         }, CONFIG.jwt_encryption, {expiresIn:CONFIG.jwt_expiration});
