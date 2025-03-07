@@ -1,4 +1,6 @@
 const nodemailer = require('nodemailer');
+const fs = require('fs');
+const path = require('path');
 const { to, TE } = require('../responseHandler');
 require('../config/config')
 
@@ -11,20 +13,28 @@ require('../config/config')
  */
 const mail = async (req, co) => {
     // Create transporter
-    let err, info;
-    let transporter = nodemailer.createTransport({
-        service: "gmail", // Use your email service (e.g., Gmail, Outlook, SMTP)
+    const templatePath = path.join(__dirname, "../public/template/mail.template.html");
+    let emailTemplate = fs.readFileSync(templatePath, "utf-8");
+
+    // Replace placeholders with actual values
+    emailTemplate = emailTemplate
+        .replace("{{studentName}}", req.user.firstName)
+        .replace("{{courseName}}", co);
+
+    // Setup email transport
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
         auth: {
-            user: CONFIG.email_user, // Your email
-            pass: CONFIG.email_pass, // Your email password or App Password
+            user: process.env.email_user,
+            pass: process.env.email_pass,
         },
     });
-    // Mail options
-    let mailOptions = {
-        from: CONFIG.email_user, // Sender address
-        to: req.user.email, // Receiver email
-        subject: 'Course Enrollment', // Email subject
-        text: `You have been enrolled ${co}`, // Email body (plain text)
+
+    const mailOptions = {
+        from: `"Online LMS" <${process.env.email_user}>`,
+        to: req.user.email,
+        subject: "Course Enrollment Confirmation",
+        html: emailTemplate,
     };
     // Send email
     [err, info] = await to(transporter.sendMail(mailOptions));
